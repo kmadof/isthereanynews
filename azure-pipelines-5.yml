@@ -22,6 +22,8 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+- pwsh: ls '$(Build.SourcesDirectory)/Itan.Application.UI'
+
 - task: CopyFiles@2
   displayName: copy files
   inputs:
