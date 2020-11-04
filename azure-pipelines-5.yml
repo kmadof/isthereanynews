@@ -23,6 +23,7 @@ steps:
   displayName: 'npm install and build'
 
 - pwsh: ls '$(Build.SourcesDirectory)/Itan.Application.UI'
+- pwsh: ls '$(Build.SourcesDirectory)'
 
 - task: CopyFiles@2
   displayName: copy files
