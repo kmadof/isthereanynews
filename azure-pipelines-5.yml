@@ -22,12 +22,13 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+- pwsh: ls '$(Build.SourcesDirectory)/Itan.Application.UI/dist'
 - pwsh: ls '$(Build.SourcesDirectory)/Itan.Application.UI'
 - pwsh: ls '$(Build.SourcesDirectory)'
 
 - task: CopyFiles@2
   displayName: copy files
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/Itan.Application.UI/dist/ItanApplicationUI/*'
+    SourceFolder: '$(Build.SourcesDirectory)/Itan.Application.UI/dist/ItanApplicationUI/'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
